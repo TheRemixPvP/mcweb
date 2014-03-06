@@ -8,7 +8,7 @@
     <script src="/assets/js/jquery.js"></script>
 </head>
 <body>
-    <div id="mainnav" class="navbar navbar-inverse" ng-controller="NavCntl">
+    <div id="mainnav" class="navbar navbar-default" ng-controller="NavCntl">
   			<div class="container">
   				<div class="navbar-header">
   					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -35,17 +35,21 @@
   				-->
 
                       				<ul class="nav navbar-nav navbar-right">
-  					<li class="dropdown">
-  						<a id="userdrop" href="javascript:" class="dropdown-toggle" data-toggle="dropdown">
-                <span class="glyphicon glyphicon-user"></span> TheRemixPvP <b class="caret"></b>
-              </a>
-  						<ul class="dropdown-menu" role="menu" aria-labledby="userdrop">
-                <li><a href="/user/TheRemixPvP">View My Profile</a></li>
-                <li><a href="/tickets">My Support Tickets</a></li>
-                
-  							<li><a href="/logout">Logout</a></li>
-  						</ul>
+  					                       <li class="dropdown">
+  						<a href="javascript:" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><b class="caret"></b></a>
+  						<div class="dropdown-menu" style="padding: 15px; min-width: 300px">
+  							<form action="/login" method="post">
+                <h3 style="margin-top: 0px">Login</h3>
+                <input class="form-control" type="text" name="username" placeholder="Username" /><br />
+                <input class="form-control" type="password" name="password" placeholder="Password" /><br />
+                <div>&raquo; <a href="/forgot">Forgot Password</a></div><br />
+                <input type="hidden" name="redirect" value="/" />
+                <input type="submit" class="btn btn-primary" value="Login">
+                <a href="/help/register" class="btn btn-default">Register</a>
+                </form>
+  						</div>
   					</li>
+
   				</ul>
             				<form class="hidden-sm navbar-form navbar-right" role="search" id="usersearchform">
   					<div class="form-group">
